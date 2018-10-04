@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <meta name = "veiwport" content = "width = device-width, initial-scale = 1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie = edge">
+    <title>
+      Заголовок страницы
+    </title>
+    {% load staticfiles%}
+    <link rel= "stylesheet" href = "{%static 'css/bootstrap.min.css'%}"
+    type = "text/css">
+  </head>
+
+  <body>
+    <div class = "jumbotron">
+      <div class = "container">
+        <h1>{%include "mainApp/includes/some_html.html"%}</h1>
+          {% block content %}
+          {% endblock %}
+        <p>
+        <a href="/" class = "btn btn-success btn-lg">Главная страницы</a>
+        <a href="/news" class = "btn btn-primary btn-lg">Новости &raquo;</a>
+        <a href="/contact" class = "btn btn-info btn-lg">Контакты</a>
+      </p>
+     </div>
+   </div>
+   <div class = "container">
+     <hr>
+     &copy; Все права защищены 2018
+   </div>
+  </body>
+</html>
