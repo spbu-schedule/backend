@@ -7,8 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
     {% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type = "text/css" >
-	<link rel="stylesheet" href="{% static 'index.css' %}" type = "text/css">
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'index.css' %}" type = "text/css">
+    {% endblock style %}
+
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type = "text/css"
 	<script src="{% static 'jquery.min.js' %}" type="text/javascript" ></script>
     <script src="{% static 'popper.min.js' %}" type="text/javascript" ></script>
 	<script src="{% static 'bootstrap.min.js' %}" type="text/javascript"></script>
@@ -83,11 +86,13 @@
 				<a href="/">Главная</a>
 			</li>
 			<li>
+                {% block analis %}
 				<a style="white-space: pre; color:grey"> /</a> <a href="instruments/?name=1,2">Анализ расписания</a>
+                {% endblock analis %}
 			</li>
 		</ol>
      </div>
-		
+	{% block content %}
 	<div id="main" class="container">
 		<div class="card-deck mt-4 mb-4">
 
@@ -180,7 +185,7 @@
 	<div>
 		</br></br></br>
 	</div>
-
+    {% endblock content %}
 	<footer>
 		<a href="https://github.com/spbu-schedule"> GitHub </a> <br>
 		<a href="https://docs.google.com/document/d/1C0oOPbrkehR4VlJ-cFEqwbGl9nMTeZCcWdAby63KLH4/edit?usp=sharing"> Описание проекта </a> 
