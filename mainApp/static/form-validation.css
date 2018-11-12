@@ -1,0 +1,45 @@
+﻿
+.container {
+	text-align: left;
+}
+
+#faculties {
+	text-align: center;
+}
+#faculties > div {
+		padding-top: 6px;	
+		padding-bottom: 6px;
+		min-width: 196px;
+		border: 0px;
+}
+
+#faculties > div > button {
+	white-space: normal;
+	padding-left: 0px;
+	padding-right: 0px;
+
+} 
+
+#cardBody {
+	padding: 12px;
+}
+
+#headingOne {
+	border-radius: .25rem;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+#headingOne > a {
+	color: black;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }

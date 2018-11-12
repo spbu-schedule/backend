@@ -1,18 +1,2748 @@
 {% extends 'mainApp/templates.html'%}
 {% block style %}
     {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'form-validation.css' %}" type = "text/css">
 	<link rel="stylesheet" href="{% static 'main.css' %}" type = "text/css">
 {% endblock style %}
 
+{% block postfiles %}
+    {% load staticfiles %}
+	<!-- Для ввода даты и времени -->
+	<script src="{% static 'moment.min.js' %}" type="text/javascript" ></script>
+	<script src="{% static 'daterangepicker.min.js' %}" type="text/javascript" ></script>
+	<link rel="stylesheet" href="{% static 'daterangepicker.css' %}" type = "text/css">
+{% endblock postfiles %}
+
 {% block analis %}
-    <a style="white-space: pre; color:grey"> /</a> <a href="#">Анализ расписания</a>
+    <li class="breadcrumb-item active" aria-current="page">Параметры инструментов</li>
 {% endblock analis %}
 
 {% block content %}
-	<div id="main" class="container">
 		(Главная часть: графики, анализ...)
 		{% for val in values %}
-          <p> {{val}}</p>
+        <p> {{val}}</p>
+		  
+		<h2 class="mb-4">Параметры инструментов</h2>
+		<form class="needs-validation" novalidate>
+			
+			<div id="1-1">
+				<h4>Занятость конкретной аудитории в определенный промежуток времени</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne11">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne11" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4 col-lg-6 mb-3">
+						<label for="audience11">Аудитории</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="audience11" placeholder="1303, 1476" value="" data-toggle="tooltip" title="Перечисление через запятую"required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-8 col-lg-6 mb-3">
+						<label for="date">Дата и время</label>
+						<small class="text-muted">(Нажмите для выбора)</small>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="datetimes">
+						</div>
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="1-2">
+				<h4>Список свободных аудиторий в определенный промежуток времени на факультете</h4>
+				
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne12">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne12" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				
+				<div class="mb-3">
+					<label for="date">Дата и время</label>
+					<small class="text-muted">(Нажмите для выбора)</small>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+									<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+								</svg>
+							</span>
+						</div>
+						<input type="text" class="form-control" name="datetimes">
+					</div>
+				</div>
+	
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="1-3">
+				<h4>Расписание аудитории</h4>
+				
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne13">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne13" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+				  <div class="col-md-12 mb-3">
+					<label for="audience13">Аудитория</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+									</svg>
+								</span>
+						</div>
+						<input type="text" class="form-control" id="audience13" placeholder="4247" value="" data-toggle="tooltip" title="Только одна аудитория!"required>
+					</div>
+					<div class="invalid-feedback">
+						Данное поле обязательно для заполнения
+					</div>
+				  </div>
+				</div>
+	
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="2-1">
+				<h4>Список преподавателей, обучающих выбранную группу/ведущих выбранну дисциплину</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne21">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne21" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="group21">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group21" placeholder="332" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-6 mb-3">
+						<label for="subjuct21">Дисциплина</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M2,6V8H14V6H2M2,10V12H14V10H2M20.04,10.13C19.9,10.13 19.76,10.19 19.65,10.3L18.65,11.3L20.7,13.35L21.7,12.35C21.92,12.14 21.92,11.79 21.7,11.58L20.42,10.3C20.31,10.19 20.18,10.13 20.04,10.13M18.07,11.88L12,17.94V20H14.06L20.12,13.93L18.07,11.88M2,14V16H10V14H2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="subjuct21" placeholder="Макроэкономика" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+				</div>
+
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="2-2">
+				<h4>Занятость преподавателей, обучающих выбранную группу/ведущих выбранну дисциплину</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne22">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne22" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="firstName">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group22" placeholder="110" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-6 mb-3">
+						<label for="subject22">Дисциплина</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M2,6V8H14V6H2M2,10V12H14V10H2M20.04,10.13C19.9,10.13 19.76,10.19 19.65,10.3L18.65,11.3L20.7,13.35L21.7,12.35C21.92,12.14 21.92,11.79 21.7,11.58L20.42,10.3C20.31,10.19 20.18,10.13 20.04,10.13M18.07,11.88L12,17.94V20H14.06L20.12,13.93L18.07,11.88M2,14V16H10V14H2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="subject22" placeholder="Общая генетика" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+				</div>
+
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="2-3">
+				<h4>Занятость определенного преподавателя</h4>
+				
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne3">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne3" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-4 mb-2">
+						<label for="name23">Имя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M15.5,12C18,12 20,14 20,16.5C20,17.38 19.75,18.21 19.31,18.9L22.39,22L21,23.39L17.88,20.32C17.19,20.75 16.37,21 15.5,21C13,21 11,19 11,16.5C11,14 13,12 15.5,12M15.5,14A2.5,2.5 0 0,0 13,16.5A2.5,2.5 0 0,0 15.5,19A2.5,2.5 0 0,0 18,16.5A2.5,2.5 0 0,0 15.5,14M10,4A4,4 0 0,1 14,8C14,8.91 13.69,9.75 13.18,10.43C12.32,10.75 11.55,11.26 10.91,11.9L10,12A4,4 0 0,1 6,8A4,4 0 0,1 10,4M2,20V18C2,15.88 5.31,14.14 9.5,14C9.18,14.78 9,15.62 9,16.5C9,17.79 9.38,19 10,20H2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="name23" placeholder="Иванов И.И." value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-3 mb-2">
+						<label for="week23">Неделя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M7,13H21V11H7M7,19H21V17H7M7,7H21V5H7M2,11H3.8L2,13.1V14H5V13H3.2L5,10.9V10H2M3,8H4V4H2V5H3M2,17H4V17.5H3V18.5H4V19H2V20H5V16H2V17Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="week23" placeholder="31" value="" required>
+						</div>
+						<small class="text-muted"> Для просмотра номера недели нажмите на Дату</small>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-5 mb-3">
+						<label for="date">Дата</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="numberOfWeek">
+						</div>
+					</div>
+				</div>
+
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-1">
+				<h4>Количество занятий по дням недели для учебных групп</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne31">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne31" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 mb-2">
+						<label for="group31">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group31" placeholder="411" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-3 mb-2">
+						<label for="week31">Неделя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M7,13H21V11H7M7,19H21V17H7M7,7H21V5H7M2,11H3.8L2,13.1V14H5V13H3.2L5,10.9V10H2M3,8H4V4H2V5H3M2,17H4V17.5H3V18.5H4V19H2V20H5V16H2V17Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="week31" placeholder="39" value="" required>
+						</div>
+						<small class="text-muted"> Для просмотра номера недели нажмите на Дату </small>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="date">Дата</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="numberOfWeek">
+						</div>
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-2">
+				<h4>Количество занятий конкретной дисциплины в семестре для учебных групп</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne32">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne32" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="group32">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group32" placeholder="101" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-6 mb-3">
+						<label for="subject32">Дисциплина</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M2,6V8H14V6H2M2,10V12H14V10H2M20.04,10.13C19.9,10.13 19.76,10.19 19.65,10.3L18.65,11.3L20.7,13.35L21.7,12.35C21.92,12.14 21.92,11.79 21.7,11.58L20.42,10.3C20.31,10.19 20.18,10.13 20.04,10.13M18.07,11.88L12,17.94V20H14.06L20.12,13.93L18.07,11.88M2,14V16H10V14H2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="subject32" placeholder="Введение в спектроскопию" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+				</div>
+
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-3">
+				<h4>Количество пар в неделю по дисциплинам</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne33">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne33" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 mb-2">
+						<label for="group32">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group32" placeholder="312" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-3 mb-2">
+						<label for="week32">Неделя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M7,13H21V11H7M7,19H21V17H7M7,7H21V5H7M2,11H3.8L2,13.1V14H5V13H3.2L5,10.9V10H2M3,8H4V4H2V5H3M2,17H4V17.5H3V18.5H4V19H2V20H5V16H2V17Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="week32" placeholder="11" value="" required>
+						</div>
+						<small class="text-muted"> Для просмотра номера недели нажмите на Дату</small>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="date">Дата</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="numberOfWeek">
+						</div>
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-4">
+				<h4>Соотношение лекций и практик по дисциплинам учебных групп</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne34">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne34" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="group34">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group34" placeholder="202" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>				  
+					<div class="col-md-6 mb-3">
+						<label for="subject34">Дисциплина</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M2,6V8H14V6H2M2,10V12H14V10H2M20.04,10.13C19.9,10.13 19.76,10.19 19.65,10.3L18.65,11.3L20.7,13.35L21.7,12.35C21.92,12.14 21.92,11.79 21.7,11.58L20.42,10.3C20.31,10.19 20.18,10.13 20.04,10.13M18.07,11.88L12,17.94V20H14.06L20.12,13.93L18.07,11.88M2,14V16H10V14H2Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="subject34" placeholder="История средних веков" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+				</div>
+
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-5">
+				<h4>Общая занятость факультетов</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne35">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne35" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-2">
+						<label for="week35">Неделя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M7,13H21V11H7M7,19H21V17H7M7,7H21V5H7M2,11H3.8L2,13.1V14H5V13H3.2L5,10.9V10H2M3,8H4V4H2V5H3M2,17H4V17.5H3V18.5H4V19H2V20H5V16H2V17Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="week35" placeholder="22" value="" required>
+						</div>
+						<small class="text-muted"> Для просмотра номера недели нажмите на Дату</small>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="date">Дата</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="numberOfWeek">
+						</div>
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="3-6">
+				<h4>Лекции/практики на факультете</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne36">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne36" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-2">
+						<label for="week36">Неделя</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M7,13H21V11H7M7,19H21V17H7M7,7H21V5H7M2,11H3.8L2,13.1V14H5V13H3.2L5,10.9V10H2M3,8H4V4H2V5H3M2,17H4V17.5H3V18.5H4V19H2V20H5V16H2V17Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="week36" placeholder="42" value="" required>
+						</div>
+						<small class="text-muted"> Для просмотра номера недели нажмите на Дату</small>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="date">Дата</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="numberOfWeek">
+						</div>
+					</div>
+				</div>
+			
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="4-1">
+				<h4>Список вариантов пар, на которые можно перенести занятие</h4>
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne41">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne41" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label for="group41">Учебная группа</label>
+						<div class="input-group">
+							<div class="input-group-prepend">
+									<span class="input-group-text">
+										<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+											<path fill="#000000" d="M16,13C15.71,13 15.38,13 15.03,13.05C16.19,13.89 17,15 17,16.5V19H23V16.5C23,14.17 18.33,13 16,13M8,13C5.67,13 1,14.17 1,16.5V19H15V16.5C15,14.17 10.33,13 8,13M8,11A3,3 0 0,0 11,8A3,3 0 0,0 8,5A3,3 0 0,0 5,8A3,3 0 0,0 8,11M16,11A3,3 0 0,0 19,8A3,3 0 0,0 16,5A3,3 0 0,0 13,8A3,3 0 0,0 16,11Z" />
+										</svg>
+									</span>
+							</div>
+							<input type="text" class="form-control" id="group41" placeholder="403" value="" required>
+						</div>
+						<div class="invalid-feedback">
+							Данное поле обязательно для заполнения
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<label for="date">Дата и время</label>
+						<small class="text-muted">(Нажмите для выбора)</small>
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">
+									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+									</svg>
+								</span>
+							</div>
+							<input type="text" class="form-control" name="startTime">
+						</div>
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+			
+			<div id="4-2">
+				<h4>Список свободных преподавателей на время определенной пары для замены</h4>
+				
+				<div class="mb-3">
+					<label>Факультет</label>
+					<div class="card mb-3 text-alight-center">
+						<div class="card-header bg-white" id="headingOne">
+							<a class="text-muted" data-toggle="collapse" href="#" data-target="#collapseOne42">
+								Список факультетов
+							</a>
+							<small class="text-muted"> (Нажмите для выбора)</small>
+						</div>
+
+						<div id="collapseOne42" class="collapse" aria-labelledby="headingOne">
+							<div id="cardBody" class="card-body">
+								<div class="container">
+									<div id="faculties" class="row justify-content-center align-items-center">
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Академическая гимназия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Биология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Востоковедение
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Журналистика, Прикладные коммуникации
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Искусства
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												История
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												КФКиСЭТ
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Математика, Механика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Медицина
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Междисциплинарные программы
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Международные отношения
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Менеджмент
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Науки о Земле
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Политология
+											</button>								
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Процессы управления
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Психология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Свободные искусства и науки
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Социология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Стоматология и медицинские технологии
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Физика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Филология
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Философия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Химия
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Экономика
+											</button>
+										</div>
+										<div class="card col-6 col-sm-4 col-md-3 ">
+											<button type="button" class="btn btn-white">
+												Юриспруденция
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="mb-3">
+					<label for="date">Дата и время</label>
+					<small class="text-muted">(Нажмите для выбора)</small>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+									<path fill="#000000" d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z" />
+								</svg>
+							</span>
+						</div>
+						<input type="text" class="form-control" name="startTime">
+					</div>
+				</div>
+				
+				<hr class="mb-4">					
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<button class="btn btn-primary btn-lg btn-block" type="submit">
+						Продолжить
+					</button>
+				</div>
+			</div>
+		</form>
+		  
         {%endfor%}
-	</div>
+		
+		<script>
+		$(function date() {
+		  $('input[name="datetimes"]').daterangepicker({
+				"timePicker": true,
+				"timePicker24Hour": true,
+				"showISOWeekNumbers": true,
+				"timePickerIncrement": 5,
+				"locale": {
+					"format": "DD/MM/YYYY HH:mm",
+					"separator": " - ",
+					"applyLabel": "Apply",
+					"cancelLabel": "Cancel",
+					"fromLabel": "From",
+					"toLabel": "To",
+					"customRangeLabel": "Custom",
+					"weekLabel": "№",
+					"daysOfWeek": [
+						"Вс","Пн","Вт","Ср","Чт","Пт","Сб"
+					],
+					"monthNames": [
+						"Январь","Февраль","Март","Апрель",
+						"Май","Июнь","Июль","Август",
+						"Сентябрь","Октябрь","Ноябрь","Декабрь"
+					],
+					"firstDay": 1
+				},
+				"alwaysShowCalendars": false,
+				"linkedCalendars": false,
+				"opens": "center"
+			}, function(start, end, label) {
+			  console.log('New date range selected: ' + start.format('YYYY-MM-DD HH:mm') + ' to ' + end.format('YYYY-MM-DD HH:mm'));
+			});
+		});
+	</script>
+	
+	<script>
+	$(function() {
+	  $('input[name="startTime"]').daterangepicker({
+		"singleDatePicker": true,
+		"timePicker": true,
+		"timePicker24Hour": true,
+		"showISOWeekNumbers": true,
+		"timePickerIncrement": 5,
+		"locale": {
+			"format": "DD/MM/YYYY HH:mm",
+			"separator": " - ",
+			"applyLabel": "Apply",
+			"cancelLabel": "Cancel",
+			"fromLabel": "From",
+			"toLabel": "To",
+			"customRangeLabel": "Custom",
+			"weekLabel": "№",
+			"daysOfWeek": [
+				"Вс","Пн","Вт","Ср","Чт","Пт","Сб"
+			],
+			"monthNames": [
+				"Январь","Февраль","Март","Апрель",
+				"Май","Июнь","Июль","Август",
+				"Сентябрь","Октябрь","Ноябрь","Декабрь"
+			],
+			"firstDay": 1
+		},
+		"alwaysShowCalendars": false,
+		"linkedCalendars": false,
+		"opens": "center"
+	  }, function(start, label) {
+		console.log('New date selected: ' + start.format('YYYY-MM-DD HH:mm'));
+	  });
+	});
+	</script>
+	
+	<script>
+	$(function() {
+	  $('input[name="numberOfWeek"]').daterangepicker({
+		"singleDatePicker": true,
+		"showISOWeekNumbers": true,
+		"locale": {
+			"format": "DD/MM/YYYY № W",
+			"separator": " - ",
+			"applyLabel": "Apply",
+			"cancelLabel": "Cancel",
+			"fromLabel": "From",
+			"toLabel": "To",
+			"customRangeLabel": "Custom",
+			"weekLabel": "№",
+			"daysOfWeek": [
+				"Вс","Пн","Вт","Ср","Чт","Пт","Сб"
+			],
+			"monthNames": [
+				"Январь","Февраль","Март","Апрель",
+				"Май","Июнь","Июль","Август",
+				"Сентябрь","Октябрь","Ноябрь","Декабрь"
+			],
+			"firstDay": 1
+		},
+		"alwaysShowCalendars": false,
+		"opens": "center"
+	  }, function(start, label) {
+		console.log('New date selected: ' + start.format('W') + ' week');
+	  });
+	});
+	</script>
+	
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+	
+	<script>
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
+		
 {% endblock content %}

@@ -1,110 +1,102 @@
+{% extends 'mainApp/templates.html'%}
+{% block style %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'index.css' %}" type = "text/css">
+{% endblock style %}
 
-    {% extends 'mainApp/templates.html'%}
-    {% block style %}
-    {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'index.css' %}" type = "text/css">
-    {% endblock style %}
+{% block postfiles %}
+{% endblock postfiles %}
 
-                {% block analis %}
-                    <li>
-				        <a style="white-space: pre; color:grey"> /</a> <a href="instruments/?name=1,2">Анализ расписания</a>
-			        </li>
-			        <li>
-				        <a style="white-space: pre; color:grey"> /</a> <a href="instruments/?name=1,2,3">Выбор задач</a>
-			        </li>
-                {% endblock analis %}
+{% block analis %}
+	<li class="breadcrumb-item active" aria-current="page">Выбор задач</li>
+{% endblock analis %}
 
-	{% block content %}
-	<div id="main" class="container">
-		<div class="card-deck mt-4 mb-4">
+{% block content %}
+	<div class="card-deck mt-4 mb-4">
 
-			<div class="card box-shadow">
-			  <div class="card-header text-center">
-				<h5 class="my-0 font-weight-normal">Для студентов</h5>
-			  </div>
-			  <div class="card-body">
-				<ul class="list ml-3 mt-1 mb-1 text-left">
-							<li>
-								<a href="#" class="card-link">Card link1 Card link1 Card link1</a>
-							</li>
-							<li>
-								<a href="#" class="card-link">Card link2</a>
-							</li>
-							<li>
-								<a href="#" class="card-link">Card link3</a>
-							</li>
-				</ul>
-			  </div>
-			</div>
-			
-			<div class="card box-shadow">
-			  <div class="card-header text-center">
-				<h5 class="my-0 font-weight-normal">Для преподавателей</h5>
-			  </div>
-			  <div class="card-body">
-				<ul class="list ml-3 mt-1 mb-1 text-left">
-				  			<li>
-								<a href="#" class="card-link">Card link1</a>
-							</li>
-							<li>
-								<a href="#" class="card-link">Card link2</a>
-							</li>
-							<li>
-								<a href="#" class="card-link">Card link3</a>
-							</li>
-				</ul>
-			  </div>
-			</div>
-			
+		<div class="card box-shadow">
+		  <div class="card-header text-center">
+			<h5 class="my-0 font-weight-normal">Для студентов</h5>
+		  </div>
+		  <div class="card-body">
+			<ul class="list ml-3 mt-1 mb-1 text-left">
+						<li>
+							<a href="#" class="card-link">Card link1 Card link1 Card link1</a>
+						</li>
+						<li>
+							<a href="#" class="card-link">Card link2</a>
+						</li>
+						<li>
+							<a href="#" class="card-link">Card link3</a>
+						</li>
+			</ul>
+		  </div>
+		</div>
+		
+		<div class="card box-shadow">
+		  <div class="card-header text-center">
+			<h5 class="my-0 font-weight-normal">Для преподавателей</h5>
+		  </div>
+		  <div class="card-body">
+			<ul class="list ml-3 mt-1 mb-1 text-left">
+						<li>
+							<a href="#" class="card-link">Card link1</a>
+						</li>
+						<li>
+							<a href="#" class="card-link">Card link2</a>
+						</li>
+						<li>
+							<a href="#" class="card-link">Card link3</a>
+						</li>
+			</ul>
+		  </div>
+		</div>
+		
+	</div>
+  
+	<div class="card-deck">
+
+		<div class="card mb-3 box-shadow">
+		  <div class="card-header text-center">
+			<h5 class="my-0 font-weight-normal">Для диспетчеров</h5>
+		  </div>
+		  <div class="card-body">
+			<ul class="list ml-3 mt-1 mb-1 text-left">
+				<li>
+					<a href="#" class="card-link">Card link1</a>
+				</li>
+				<li>
+					<a href="#" class="card-link">Card link2</a>
+				</li>
+				<li>
+					<a href="#" class="card-link">Card link3</a>
+				</li>
+				<li>
+					<a href="#" class="card-link">Card link3</a>
+				</li>
+			</ul>
+		  </div>
 		</div>
 	  
-		<div class="card-deck">
-
-			<div class="card mb-3 box-shadow">
-			  <div class="card-header text-center">
-				<h5 class="my-0 font-weight-normal">Для диспетчеров</h5>
-			  </div>
-			  <div class="card-body">
-				<ul class="list ml-3 mt-1 mb-1 text-left">
-					<li>
-						<a href="#" class="card-link">Card link1</a>
-					</li>
-					<li>
-						<a href="#" class="card-link">Card link2</a>
-					</li>
-					<li>
-						<a href="#" class="card-link">Card link3</a>
-					</li>
-					<li>
-						<a href="#" class="card-link">Card link3</a>
-					</li>
-				</ul>
-			  </div>
-			</div>
-		  
-			<div class="card mb-3 box-shadow">
-			  <div class="card-header text-center">
-				<h5 class="my-0 font-weight-normal">Для управлений</h5>
-			  </div>
-			  <div class="card-body">
-				<ul class="list ml-3 mt-1 mb-1 text-left">
-					<li>
-						<a href="#" class="card-link">Card link1</a>
-					</li>
-					<li>
-						<a href="#" class="card-link">Card link2</a>
-					</li>
-					<li>
-						<a href="#" class="card-link">Card link3</a>
-					</li>
-				</ul>
-			  </div>
-			</div>
-			
+		<div class="card mb-3 box-shadow">
+		  <div class="card-header text-center">
+			<h5 class="my-0 font-weight-normal">Для управлений</h5>
+		  </div>
+		  <div class="card-body">
+			<ul class="list ml-3 mt-1 mb-1 text-left">
+				<li>
+					<a href="#" class="card-link">Card link1</a>
+				</li>
+				<li>
+					<a href="#" class="card-link">Card link2</a>
+				</li>
+				<li>
+					<a href="#" class="card-link">Card link3</a>
+				</li>
+			</ul>
+		  </div>
 		</div>
-    </div>
-	
-	<div>
-		</br></br></br>
+		
 	</div>
-    {% endblock content %}
+
+{% endblock content %}
