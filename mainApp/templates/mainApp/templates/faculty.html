@@ -1,13 +1,8 @@
-<div class="mb-3">
-
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Факультет</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                {%  for faculty in name %}
-                                 <option>{{ faculty.name }}</option>
-                                {% endfor %}
-
-                            </select>
-                        </div>
-
+<div class="form-group">
+	<label for="faculty1">Факультет</label>
+	<select class="form-control" id="faculty1">
+		{%  for faculty in name %}
+		 <option>{{ faculty.name }}</option>
+		{% endfor %}
+	</select>
 </div>
