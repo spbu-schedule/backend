@@ -7,10 +7,10 @@
 	text-align: center;
 }
 #faculties > div {
-		padding-top: 6px;	
-		padding-bottom: 6px;
-		min-width: 196px;
-		border: 0px;
+	padding-top: 6px;	
+	padding-bottom: 6px;
+	min-width: 196px;
+	border: 0px;
 }
 
 #faculties > div > button {
