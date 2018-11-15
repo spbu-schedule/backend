@@ -1,0 +1,23 @@
+{% extends 'mainApp/templates/templates.html' %}
+{% block style %}
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'form-validation.css' %}" type = "text/css">
+	<link rel="stylesheet" href="{% static 'main.css' %}" type = "text/css">
+{% endblock style %}
+
+{% block postfiles %}
+    {% load staticfiles %}
+	<!-- Для ввода даты и времени -->
+	<script src="{% static 'moment.min.js' %}" type="text/javascript" ></script>
+	<script src="{% static 'daterangepicker.min.js' %}" type="text/javascript" ></script>
+	<link rel="stylesheet" href="{% static 'daterangepicker.css' %}" type = "text/css">
+{% endblock postfiles %}
+
+{% block analis %}
+    <li class="breadcrumb-item active" aria-current="page">Параметры инструментов</li>
+{% endblock analis %}
+
+{% block content %}
+ <img src="{%  static 'tool_2_2_2,Математико-механический факультет,Алгебра.svg' %}">
+
+{% endblock content %}

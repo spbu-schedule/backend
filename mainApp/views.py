@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from mainApp.models import Faculty
+import teachers
 
 def index(request):
     return render(request, 'mainApp/index.html')
@@ -21,4 +22,7 @@ def instruments(request):
     return render(request, 'mainApp/parameters.html', {'values': items, 'name': facultys})
 
 
+def test(request):
+    items = teachers.tool_2_2_2('Математико-механический факультет', 'Алгебра')
+    return render(request, 'mainApp/test.html',{'photo': items})
 
