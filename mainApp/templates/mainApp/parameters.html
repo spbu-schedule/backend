@@ -2,7 +2,6 @@
 {% block style %}
     {% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'form-validation.css' %}" type = "text/css">
-	<link rel="stylesheet" href="{% static 'main.css' %}" type = "text/css">
 {% endblock style %}
 
 {% block postfiles %}
@@ -20,7 +19,7 @@
 {% block content %}
 		  
 		<h2 class="mb-4">Параметры инструментов</h2>
-		<form class="needs-validation mb-4" novalidate>
+		<form class="needs-validation mb-5" novalidate>
         {% for val in values %}
 			{% if val == '1-1' %}
 			<div id="1-1">
@@ -275,16 +274,16 @@
 			</div>
             {% endif %}
         {%endfor%}
-			<div class="row justify-content-center mt-5 mb-2">
+			<div class="row justify-content-center mt-6 mb-4">
 				<div class="col-md-8">
 					<button class="btn btn-primary btn-lg btn-block" type="submit">
-                        <a href="/test">Продолжить</a>
+                        <a style="color: white" href="/test">Продолжить</a>
 					</button>
 				</div>
 			</div>
 		</form>
         <div>
-            </br></br></br>
+            </br></br></br></br></br>
         </div>
 
 	<script>
