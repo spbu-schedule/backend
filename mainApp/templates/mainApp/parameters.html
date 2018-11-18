@@ -32,7 +32,7 @@
 						{% include 'mainApp/templates/audience.html' %}
                     </div>
                     <div class="col-12 col-md-12 col-lg-5">
-						{% include 'mainApp/templates/date_time.html' %}
+						{% include 'mainApp/templates/date_range.html' %}
                     </div>
 				</div>
 				<hr class="mb-4">					
@@ -47,7 +47,7 @@
 						{% include 'mainApp/templates/faculty.html' %}
                     </div>
                     <div class="col-12 col-md-7 col-lg-6">
-						{% include 'mainApp/templates/date_time.html' %}
+						{% include 'mainApp/templates/date_range.html' %}
                     </div>
 				</div>
 				<hr class="mb-4">						
@@ -71,15 +71,12 @@
 			
             {% if val == '2-1' %}
 			<div id="2-1">
-				<h4>Список преподавателей, обучающих выбранную группу/ведущих выбранну дисциплину</h4>
+				<h4>Список преподавателей, ведущих выбранную дисциплину</h4>
 				<div class="row">
-					<div class="col-sm-6 col-md-4">
+					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/faculty.html' %}
-					</div>	
-					<div class="col-sm-6 col-md-4">
-                        {% include 'mainApp/templates/group.html' %}
-					</div>				  
-					<div class="col-sm-12 col-md-4">
+					</div>		  
+					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/discipline.html' %}
 					</div>
 				</div>
@@ -87,18 +84,15 @@
 			</div>
 			{% endif %}
 			
-            {% if val == '2-2' %}
-			<div id="2-2">
-				<h4>Занятость преподавателей, обучающих выбранную группу/ведущих выбранну дисциплину</h4>
+			{% if val == '2-2' %}
+			<div id="2-1">
+				<h4>Список преподавателей, обучающих выбранную группу</h4>
 				<div class="row">
-					<div class="col-sm-6 col-md-4">
+					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/faculty.html' %}
-					</div>	
-					<div class="col-sm-6 col-md-4">
+					</div>		  
+					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/group.html' %}
-					</div>				  
-					<div class="col-sm-12 col-md-4">
-                        {% include 'mainApp/templates/discipline.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -107,19 +101,46 @@
 			
             {% if val == '2-3' %}
 			<div id="2-3">
+				<h4>Занятость преподавателей, обучающих выбранную группу</h4>
+				<div class="row">
+					<div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/faculty.html' %}
+					</div>	
+					<div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/group.html' %}
+					</div>				  
+				</div>
+				<hr class="mb-4">					
+			</div>
+			{% endif %}
+			
+			{% if val == '2-4' %}
+			<div id="2-4">
+				<h4>Занятость преподавателей, ведущих выбранную дисциплину</h4>
+				<div class="row">
+					<div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/faculty.html' %}
+					</div>				  
+					<div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/discipline.html' %}
+					</div>
+				</div>
+				<hr class="mb-4">					
+			</div>
+			{% endif %}
+			
+            {% if val == '2-5' %}
+			<div id="2-5">
 				<h4>Занятость определенного преподавателя</h4>
 				<div class="row">
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/faculty.html' %}
 					</div>
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/name_teacher.html' %}
 					</div>				  
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/week.html' %}
-					</div>
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/date.html' %}
+					<div class="col-12 col-md-12 col-lg-4">
+                        {% include 'mainApp/templates/date_week.html' %}
 					</div>
 				</div>
 
@@ -131,17 +152,14 @@
 			<div id="3-1">
 				<h4>Количество занятий по дням недели для учебных групп</h4>
                 <div class="row">
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/faculty.html' %}
 					</div>
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/group.html' %}
-					</div>				  
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/week.html' %}
 					</div>
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/date.html' %}
+					<div class="col-12 col-md-12 col-lg-4">
+                        {% include 'mainApp/templates/date_week.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -170,17 +188,14 @@
 			<div id="3-3">
 				<h4>Количество пар в неделю по дисциплинам</h4>
 				<div class="row">
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/faculty.html' %}
 					</div>
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-4">
                         {% include 'mainApp/templates/group.html' %}
-					</div>				  
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/week.html' %}
 					</div>
-					<div class="col-12 col-md-6">
-                        {% include 'mainApp/templates/date.html' %}
+					<div class="col-12 col-md-12 col-lg-4">
+                        {% include 'mainApp/templates/date_week.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -209,14 +224,11 @@
 			<div id="3-5">
 				<h4>Общая занятость факультетов</h4>
 				<div class="row">
-					<div class="col-12 col-sm-12 col-md-4">
+					<div class="col-12 col-md-6">
                         {% include 'mainApp/templates/faculty.html' %}
-					</div>			  
-					<div class="col-12 col-sm-6 col-md-3">
-                        {% include 'mainApp/templates/week.html' %}
 					</div>
-					<div class="col-12 col-sm-6 col-md-5">
-                        {% include 'mainApp/templates/date.html' %}
+					<div class="col-12 col-md-6">
+                        {% include 'mainApp/templates/date_week.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -227,14 +239,11 @@
 			<div id="3-6">
 				<h4>Лекции/практики на факультете</h4>
 				<div class="row">
-					<div class="col-12 col-sm-12 col-md-4">
+					<div class="col-12 col-md-6">
                         {% include 'mainApp/templates/faculty.html' %}
-					</div>			  
-					<div class="col-12 col-sm-6 col-md-3">
-                        {% include 'mainApp/templates/week.html' %}
 					</div>
-					<div class="col-12 col-sm-6 col-md-5">
-                        {% include 'mainApp/templates/date.html' %}
+					<div class="col-12 col-md-6">
+                        {% include 'mainApp/templates/date_week.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -252,7 +261,7 @@
 						{% include 'mainApp/templates/group.html' %}
                     </div>
                     <div class="col-12 col-md-12 col-lg-5">
-						{% include 'mainApp/templates/date_time.html' %}
+						{% include 'mainApp/templates/date_start.html' %}
                     </div>
 				</div>				
 				<hr class="mb-4">					
@@ -267,7 +276,7 @@
 						{% include 'mainApp/templates/faculty.html' %}
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
-						{% include 'mainApp/templates/date_time.html' %}
+						{% include 'mainApp/templates/date_start.html' %}
                     </div>
 				</div>		
 				<hr class="mb-4">					
@@ -288,7 +297,7 @@
 
 	<script>
 	$(function date() {
-	  $('input[name="datetimes"]').daterangepicker({
+	  $('input[name="date_range"]').daterangepicker({
 			"timePicker": true,
 			"timePicker24Hour": true,
 			"showISOWeekNumbers": true,
@@ -296,8 +305,8 @@
 			"locale": {
 				"format": "DD/MM/YYYY HH:mm",
 				"separator": " - ",
-				"applyLabel": "Apply",
-				"cancelLabel": "Cancel",
+				"applyLabel": "Принять",
+				"cancelLabel": "Отменить",
 				"fromLabel": "From",
 				"toLabel": "To",
 				"customRangeLabel": "Custom",
@@ -332,8 +341,8 @@
 		"locale": {
 			"format": "DD/MM/YYYY HH:mm",
 			"separator": " - ",
-			"applyLabel": "Apply",
-			"cancelLabel": "Cancel",
+			"applyLabel": "Принять",
+			"cancelLabel": "Отменить",
 			"fromLabel": "From",
 			"toLabel": "To",
 			"customRangeLabel": "Custom",
@@ -365,8 +374,8 @@
 		"locale": {
 			"format": "DD/MM/YYYY № W",
 			"separator": " - ",
-			"applyLabel": "Apply",
-			"cancelLabel": "Cancel",
+			"applyLabel": "Принять",
+			"cancelLabel": "Отменить",
 			"fromLabel": "From",
 			"toLabel": "To",
 			"customRangeLabel": "Custom",
