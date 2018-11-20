@@ -18,6 +18,20 @@
 {% endblock analis %}
 
 {% block content %}
- <img src="{%  static 'tool_2_2_2,Математико-механический факультет,Алгебра.svg' %}">
+    {% if oo == '3-2' %}
+    <h4> Количество занятий по предмету {{ tt }} - {{ photo }}</h4>
+    {% endif %}
+    {% if oo == '2-1' or oo == '2-2' %}
+    <ol>
+    {% for val in photo %}
+        <li>{{ val }}</li>
+    {% endfor %}
+    </ol>
+    {% endif %}
+
+    {% if  oo == '2-3' or oo == '2-4' or oo == '2-5' or oo == '3-1' or oo == '3-3' or oo == '3-4' or oo == '3-5'%}
+    <img src="../static/{{ photo }}">
+
+    {% endif %}
 
 {% endblock content %}

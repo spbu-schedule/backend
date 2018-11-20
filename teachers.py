@@ -1,5 +1,8 @@
 import os
 
+import matplotlib
+matplotlib.use('Agg')
+
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
@@ -52,6 +55,9 @@ def preparation():
     df = df[
         ['Номер группы', 'Факультет', 'Курс', 'Преподаватель', 'Адрес', 'Предмет', 'Вид занятия', 'День', 'День недели',
          'Номер недели', 'Время начала', 'Время окончания']]
+    df = pd.concat([df[df['День недели'] == 'пн'], df[df['День недели'] == 'вт'], df[df['День недели'] == 'ср'],
+                    df[df['День недели'] == 'чт'], df[df['День недели'] == 'пт'], df[df['День недели'] == 'сб']],
+                   ignore_index=True)
     return df
 
 
@@ -60,27 +66,27 @@ def preparation():
 # Список преподавателей, обучающих выбранную группу
 def tool_2_1_1(faculty, number):
     df = preparation()
-    return 1, pd.unique(df[(df['Номер группы'] == number) & (df['Факультет'] == faculty)]['Преподаватель'])
+    return  pd.unique(df[(df['Номер группы'] == number) & (df['Факультет'] == faculty)]['Преподаватель'])
 
 
 # Список преподавателей, ведущих выбранную дисциплину
 def tool_2_1_2(faculty, lesson):
     df = preparation()
-    return 1, pd.unique(df[(df['Предмет'] == lesson) & (df['Факультет'] == faculty)]['Преподаватель'])
+    return pd.unique(df[(df['Предмет'] == lesson) & (df['Факультет'] == faculty)]['Преподаватель'])
 
 
 # Занятость преподавателей, обучающих выбранную группу
 def tool_2_2_1(faculty, number):
-    name = 'tool_2_2_1~' + faculty + '~' + number + '.svg'
-    if os.path.isfile(name):
-        return 0, name
+    name = 'tool_2_2_1,' + faculty + ',' + number + '.svg'
+    if os.path.isfile('./mainApp/static/' + name):
+        return name
     df = preparation()
     sns.countplot(df[(df['Факультет'] == faculty) & (df['Номер группы'] == number)]['Преподаватель'])
     plt.ylabel('Количество пар')
     plt.title('Загруженность преподавателей')
     plt.xticks(rotation=90)
-    plt.savefig(name)
-    return 0, name
+    plt.savefig('./mainApp/static/' + name)
+    return name
 
 
 # Занятость преподавателей, ведущих выбранную дисциплину
@@ -100,16 +106,14 @@ def tool_2_2_2(faculty, lesson):
 # Занятость определённых преподавателей
 def tool_2_3(faculty, teacherName, day):
     name = 'tool_2_2_2,' + faculty + ',' + teacherName + ',' + day + '.svg'
-    if os.path.isfile(name):
-        return 0, name
+    if os.path.isfile('./mainApp/static/' + name):
+        return name
     df = preparation()
     week5 = time.strftime("%W", time.strptime(day, "%Y-%m-%d"))
     sns.countplot(
         df[(df['Преподаватель'] == teacherName) & (df['Факультет'] == faculty) & (df['Номер недели'] == week5)][
             'День недели'])
     plt.title('Количество пар для определенного преподавателя по дням недели')
-    plt.savefig(name)
-    return 0, name
+    plt.savefig('./mainApp/static/'+name)
+    return name
 
-
-print(tool_2_2_2('Математико-механический факультет', 'Алгебра'))

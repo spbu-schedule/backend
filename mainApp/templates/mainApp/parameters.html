@@ -19,8 +19,9 @@
 {% block content %}
 		  
 		<h2 class="mb-4">Параметры инструментов</h2>
-		<form class="needs-validation mb-5" novalidate>
-        {% for val in values %}
+		<form class="needs-validation mb-5" novalidate method='post' action="/test/">
+            {% csrf_token %}
+            {% for val in values %}
 			{% if val == '1-1' %}
 			<div id="1-1">
 				<h4>Занятость конкретной аудитории в определенный промежуток времени</h4>
@@ -59,7 +60,7 @@
 				<h4>Расписание аудитории</h4>
 				<div class="row">
 					<div class="col-sm-6 col-md-6">
-						{% include 'mainApp/templates/faculty.html' %}
+						{% include 'mainApp/templates/adress.html' %}
                     </div>
                     <div class="col-sm-6 col-md-6">
 						{% include 'mainApp/templates/audience.html' %}
@@ -71,13 +72,13 @@
 			
             {% if val == '2-1' %}
 			<div id="2-1">
-				<h4>Список преподавателей, ведущих выбранную дисциплину</h4>
+				<h4>Список преподавателей, обучающих выбранную группу</h4>
 				<div class="row">
 					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/faculty.html' %}
 					</div>		  
-					<div class="col-12 col-sm-6">
-                        {% include 'mainApp/templates/discipline.html' %}
+                    <div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/group.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -86,13 +87,13 @@
 			
 			{% if val == '2-2' %}
 			<div id="2-1">
-				<h4>Список преподавателей, обучающих выбранную группу</h4>
+				<h4>Список преподавателей, ведущих выбранную дисциплину </h4>
 				<div class="row">
 					<div class="col-12 col-sm-6">
                         {% include 'mainApp/templates/faculty.html' %}
-					</div>		  
-					<div class="col-12 col-sm-6">
-                        {% include 'mainApp/templates/group.html' %}
+					</div>
+                    <div class="col-12 col-sm-6">
+                        {% include 'mainApp/templates/discipline.html' %}
 					</div>
 				</div>
 				<hr class="mb-4">					
@@ -286,7 +287,7 @@
 			<div class="row justify-content-center mt-6 mb-4">
 				<div class="col-md-8">
 					<button class="btn btn-primary btn-lg btn-block" type="submit">
-                        <a style="color: white" href="/test">Продолжить</a>
+                       Продолжить
 					</button>
 				</div>
 			</div>
@@ -297,7 +298,7 @@
 
 	<script>
 	$(function date() {
-	  $('input[name="date_range"]').daterangepicker({
+	  $('input[name="post_date_range"]').daterangepicker({
 			"timePicker": true,
 			"timePicker24Hour": true,
 			"showISOWeekNumbers": true,
@@ -332,7 +333,7 @@
 	
 	<script>
 	$(function() {
-	  $('input[name="startTime"]').daterangepicker({
+	  $('input[name="post_date_start"]').daterangepicker({
 		"singleDatePicker": true,
 		"timePicker": true,
 		"timePicker24Hour": true,
@@ -368,11 +369,11 @@
 	
 	<script>
 	$(function() {
-	  $('input[name="numberOfWeek"]').daterangepicker({
+	  $('input[name="post_date_week"]').daterangepicker({
 		"singleDatePicker": true,
 		"showISOWeekNumbers": true,
 		"locale": {
-			"format": "DD/MM/YYYY № W",
+			"format": "YYYY-MM-DD",
 			"separator": " - ",
 			"applyLabel": "Принять",
 			"cancelLabel": "Отменить",
