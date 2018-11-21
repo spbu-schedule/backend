@@ -58,6 +58,7 @@ def preparation():
     df = pd.concat([df[df['День недели'] == 'пн'], df[df['День недели'] == 'вт'], df[df['День недели'] == 'ср'],
                     df[df['День недели'] == 'чт'], df[df['День недели'] == 'пт'], df[df['День недели'] == 'сб']],
                    ignore_index=True)
+    plt.clf()
     return df
 
 
